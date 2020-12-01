@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +37,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.divCard{
+  height: 15rem;
+  width: 15rem;
+}
+
+.pokeCard{
+  display: inline-table;
+  border-spacing: 10px 5px;
+}
+
+.paginacion{
+  margin: auto;
+  min-width: 100%;
+  align-items: center;
 }
