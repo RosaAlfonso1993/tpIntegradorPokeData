@@ -45,12 +45,20 @@
 }
 
 .pokeCard{
-  display: inline-table;
-  border-spacing: 10px 5px;
+  background-color: white;
+  border-radius: 5%; 
+  width: 33vh;
+  height: 33vh;
+  display: inline-block;
+  
+  margin: 0.5cm ;
 }
 
-.paginacion{
-  margin: auto;
-  min-width: 100%;
-  align-items: center;
+.pokeCardAtras{
+  margin-top: 0.5cm;
+  display: inline-block;
+}
+
+button{
+  margin-top: 1cm;
 }

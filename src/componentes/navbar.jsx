@@ -1,15 +1,8 @@
 import React, { useState } from 'react'
 import { Fragment } from "react";
-import { Navbar, Form, FormControl, Button } from "react-bootstrap";
-// import AppCard from "./card";
+import { Navbar, Form, FormControl } from "react-bootstrap";
 
-const AppNavbar = (setFindPokemon) => {
-    
-
-    const handleChange = (e) => {
-        setFindPokemon(e.target.value);
-        console.log(e.target.value);
-    };
+const AppNavbar = ({handleChange}) => {
 
     return (
         <Fragment>
@@ -20,13 +13,10 @@ const AppNavbar = (setFindPokemon) => {
                     <Form inline>
                         <FormControl
                             type="text"
-                            placeholder="Pokemon"
+                            placeholder="Bucar Pokemon"
                             className="mr-sm-2"
-                            // name="nombre"
                             onChange={handleChange}
-                        // value={AppCard.name}
                         />
-                        <Button variant="outline-success">Buscar</Button>
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
