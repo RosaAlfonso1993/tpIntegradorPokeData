@@ -14,7 +14,10 @@ const PokemonList = () => {
 
     const consultarApi = async () => {
         try {
-            const api = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0');
+            // const api = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0');
+            //tengo que buscar la manera de hacer menos llamadas a la api,
+            //asi como esta la llamada se tilda demasiado la pagina
+            const api = await fetch('https://pokeapi.co/api/v2/pokemon?limit=350&offset=0');
             const datoApi = await api.json();
             setPokemon(datoApi.results);
         } catch (error) {
@@ -22,8 +25,8 @@ const PokemonList = () => {
         }
     };
 
-    const handleChange = async (e) => {
-        await setFindPokemon(await pokemon.filter(function (poke) {
+    const handleChange = (e) => {
+        setFindPokemon(pokemon.filter(function (poke) {
             return poke.name.lastIndexOf(e.target.value.toLowerCase()) === 0;
         }));
         console.log(findPokemon);
@@ -34,19 +37,16 @@ const PokemonList = () => {
     return (
         <div>
             <Fragment>
-                <AppNavbar 
-                handleChange = {handleChange}
+                <AppNavbar
+                    handleChange={handleChange}
                 />
-                <Row>
-                    {listaAUsar.map((pokemon, i) =>
-                        <AppCard
-                            pokemon={pokemon}
-                            key={i}
-                        />
-                    )
-                    }
-
-                </Row>
+                {listaAUsar.map((pokemon, i) =>
+                    <AppCard
+                        pokemon={pokemon}
+                        key={i}
+                    />
+                )
+                }
             </Fragment>
         </div>
     );

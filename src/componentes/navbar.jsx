@@ -13,7 +13,7 @@ const AppNavbar = ({handleChange}) => {
                     <Form inline>
                         <FormControl
                             type="text"
-                            placeholder="Bucar Pokemon"
+                            placeholder="Buscar Pokemon"
                             className="mr-sm-2"
                             onChange={handleChange}
                         />

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-// import { Card, Button } from 'react-bootstrap';
 import ReactCardFlip from 'react-card-flip';
 
 const AppCard = ({ pokemon }) => {
     const [isFlipped, setIsFlipped] = useState(false)
-    const [imagen, setImagen] = useState([]);
+    const [imagen, setImagen] = useState('http://1.bp.blogspot.com/-Haewt1s2sZk/TfA3f5QbsII/AAAAAAAAAfQ/SnyvVJcaWXU/s320/Buscando.JPG');
     const { name, url } = pokemon;
     const [habilidades, setHabilidades] = useState([]);
     const [tipoPokemon, settipoPokemon] = useState([])
@@ -17,10 +16,8 @@ const AppCard = ({ pokemon }) => {
 
     const traerImg = async () => {
         try {
-            setImagen('http://1.bp.blogspot.com/-Haewt1s2sZk/TfA3f5QbsII/AAAAAAAAAfQ/SnyvVJcaWXU/s320/Buscando.JPG')
             const api = await fetch(url);
             const info = await api.json();
-            // const forHab = await info.abilities
             setHabilidades(info.abilities)
             settipoPokemon(info.types)
             const sprites = await info.sprites;
